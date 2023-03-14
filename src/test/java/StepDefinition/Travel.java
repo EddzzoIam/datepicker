@@ -178,8 +178,10 @@ public class Travel {
 
 	@And("I click search")
 	public void i_click_search() {
+                 wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		driver.findElement(By.xpath("//button[@id='btnSubmit']")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnSubmit']"))).click();
+		//driver.findElement(By.xpath("//button[@id='btnSubmit']")).click();
 
 	}
 
